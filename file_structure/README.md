@@ -4,7 +4,7 @@
 src/lib/
 ├── factory
 │   ├── docs
-│   │   └── factory_class.puml
+│   │   └── factory_class.mmd
 │   ├── CMakeLists.txt
 │   └── factory
 │       ├── CMakeLists.txt
@@ -15,16 +15,20 @@ src/lib/
 │       │   ├── Factory.cpp
 │       │   └── Factory.hpp
 │       └── mocks
+│       │   ├── CMakeLists.txt
+│       │   └── MockedFactory.hpp
+│       └── tests
 │           ├── CMakeLists.txt
-│           └── MockedFactory.hpp
-└── tests
+│           └── FactoryTestSuite.cpp
+└── intergrtion-tests
     ├── CMakeLists.txt
-    └── FactoryTestSuite.cpp
+    └── FactoryTestSuite.cpp # TODO: Create Suffix to integration tests
 ```
 
 ```cmake
 # ${CMAKE_SOURCE_DIR}/src/lib/factory/impls/CMakeLists.txt
 
+# NOTE: Sourcetrail implicit added as prefix
 add_sourcetrail_library(
   NAME
   lib::factory::Factory
